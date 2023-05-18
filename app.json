@@ -11,7 +11,8 @@
     },
     "updates": {
       "enabled": true,
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/94466fc8-db12-47e6-9362-37a9ff4868da"
     },
     "splash": {
       "image": "./assets/splash.png",

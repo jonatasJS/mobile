@@ -6,25 +6,23 @@ import * as Updates from 'expo-updates';
 
 import Routes from './src/routes'
 
-// Checar se há atualizações disponíveis
-const checkForUpdates = async () => {
-  const { isAvailable } = await Updates.checkForUpdateAsync();
-  if (isAvailable) {
-    updateApp();
-  }
-};
-
-// Atualizar para a versão mais recente
-const updateApp = async () => {
-  await Updates.fetchUpdateAsync();
-  Updates.reloadAsync();
-};
-
-
 export default function App() {
   useEffect(() => {
     checkForUpdates();
-  })
+  }, []);
+
+  const checkForUpdates = async () => {
+    try {
+      const update = await Updates.checkForUpdateAsync();
+      if (update.isAvailable) {
+        await Updates.fetchUpdateAsync();
+        // Executar qualquer lógica adicional antes de aplicar a atualização
+        Updates.reloadAsync();
+      }
+    } catch (error) {
+      console.error('Erro ao verificar atualizações:', error);
+    }
+  };
 
   return (
     <Routes />

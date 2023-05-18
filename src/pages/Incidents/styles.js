@@ -71,5 +71,15 @@ export default StyleSheet.create({
     color: '#e02041',
     fontSize: 15,
     fontWeight: 'bold'
+  },
+
+  reloadIcon: {
+    textAlign: "right",
+    alignItems: "flex-end",
+    justifyContent: "center",
+    width: "auto",
+    marginTop: "5%",
+    marginBottom: "-2%",
+    marginRight: "2%"
   }
 })
